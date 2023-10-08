@@ -1,0 +1,19 @@
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        
+        List<List<Integer>> answer = new ArrayList<>();
+
+        for(int row = 1; row<= numRows; row++){
+            int ans = 1;
+            ArrayList<Integer> arr = new ArrayList<>();
+            arr.add(ans);
+
+            for(int col = 1; col < row; col++){
+                ans = ans * (row - col)/col;
+                arr.add(ans);
+            }
+            answer.add(arr);
+        }
+        return answer;
+    }
+}
